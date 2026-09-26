@@ -2,14 +2,15 @@
 #include <stdio.h>
 
 int main(){
-    char a;
+    char character;
      printf("Enter your character : ");
-     scanf("%c",&a);
+     scanf("%c",&character);
 
-    if (a == 'a'|| a == 'i' || a == 'e' || a == 'o'|| a == 'u' )
+    if (character == 'a'|| character == 'i' || character == 'e' || character == 'o'|| character == 'u'|| character == 'A'|| character == 'E' || character == 'I' || character == 'O'|| character == 'U' )
     {
        printf("The character is vowel");
-    }else
+    }
+    else
     {
         printf("The character is consonant");
     }
