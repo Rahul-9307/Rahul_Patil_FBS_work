@@ -9,7 +9,7 @@ Output: Armstrong */
 //     int sum = 0;
 //     int i = 1;
 //     int temp = num;
-    
+
 //    while (i <= num)
 //     {
 //         rem = num  % 10;//5
@@ -18,7 +18,7 @@ Output: Armstrong */
 //         num = num / 10;
 
 //     }
-   
+
 //    if (num = temp)
 //    {
 //     printf("The no is armbstrong");
@@ -26,28 +26,95 @@ Output: Armstrong */
 //    {
 //     printf("The is not armbstrong");
 //    }
-   
-   
 
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int num = 153;
+//     int count = 0;
+//     int rem,res;
+//     int sum = 0;
+
+//     while (num > 0)
+//     {
+//         count++;
+//         num = num / 10;
+//     }
+
+//     int temp = num;
+
+//     while (num > 0)
+//     {
+//         rem  = num % 10;
+//         int i = 1, rem = 1;
+//         while (i <= count)
+//         {
+//             res = res * rem;
+//             i++;
+//         }
+//         sum = sum + res;
+//         num = num/10;
+
+//         // printf("%d",);
+
+//     }
+//     if (sum == temp)
+//    {
+//     printf("The no is armbstrong");
+//    }else
+//    {
+//     printf("The is not armbstrong");
+//    }
 
 //     return 0;
 // }
 
 #include <stdio.h>
 
-int main(){
-    int num = 234;
+int main()
+{
+    int no = 153;
     int sum = 0;
     int count = 0;
-    int i = 1;
-
-    while (num >= 0);
+    int temp = no;
+    int rem;
+    while (no > 0)
     {
-        count = count+ 1;
-        num = num / 10;
-        
+        count++;
+        no = no / 10;
     }
-    printf("%d",count);
-    
+
+
+    no = temp;
+
+    while (no > 0)
+    {
+        rem = no % 10;
+        int res = 1;
+        int i = 1;
+        while (i <= count)
+        {
+            res = res * rem;
+            i++;
+        }
+        sum = sum + res;
+
+        no = no / 10;
+    }
+    // printf("%d", sum);
+
+     if (sum == temp)
+   {
+    printf("The no is armbstrong");
+   }else
+   {
+    printf("The is not armbstrong");
+   }
+
+
     return 0;
 }
