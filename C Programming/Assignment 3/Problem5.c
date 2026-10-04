@@ -30,48 +30,7 @@ Output: Armstrong */
 //     return 0;
 // }
 
-// #include <stdio.h>
 
-// int main()
-// {
-//     int num = 153;
-//     int count = 0;
-//     int rem,res;
-//     int sum = 0;
-
-//     while (num > 0)
-//     {
-//         count++;
-//         num = num / 10;
-//     }
-
-//     int temp = num;
-
-//     while (num > 0)
-//     {
-//         rem  = num % 10;
-//         int i = 1, rem = 1;
-//         while (i <= count)
-//         {
-//             res = res * rem;
-//             i++;
-//         }
-//         sum = sum + res;
-//         num = num/10;
-
-//         // printf("%d",);
-
-//     }
-//     if (sum == temp)
-//    {
-//     printf("The no is armbstrong");
-//    }else
-//    {
-//     printf("The is not armbstrong");
-//    }
-
-//     return 0;
-// }
 
 #include <stdio.h>
 
