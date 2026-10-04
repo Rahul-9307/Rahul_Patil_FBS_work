@@ -64,7 +64,7 @@ int main()
 
         no = no / 10;
     }
-    // printf("%d", sum);
+    
 
      if (sum == temp)
    {
