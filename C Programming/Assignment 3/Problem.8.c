@@ -8,12 +8,15 @@ int main()
 {
     int num;
     int new_sum = 0;
-    int new_num = num;
-    
-    int old_num = num;
+
 
     printf("Enter Your number : ");
     scanf("%d",&num);
+
+
+    int new_num = num;
+    int old_num = num;
+
     
     while (new_num > 0)
     {
