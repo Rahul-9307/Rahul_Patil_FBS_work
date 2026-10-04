@@ -11,7 +11,7 @@ int main()
     int sum = 1;
     int new_sum = 0;
 
-    while (num <= 0)
+    while (num >= 0)
     {
         num = num % 10; // 5
         for (int i = 1; i <= num; i++)
