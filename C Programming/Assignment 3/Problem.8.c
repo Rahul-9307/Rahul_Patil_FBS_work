@@ -6,22 +6,36 @@ Output: Strong */
 
 int main()
 {
-    int num = 145;
-    // int fact = num,b;
-    int sum = 1;
+    int num;
     int new_sum = 0;
+    int new_num = num;
+    
+    int old_num = num;
 
-    while (num >= 0)
+    printf("Enter Your number : ");
+    scanf("%d",&num);
+    
+    while (new_num > 0)
     {
-        num = num % 10; // 5
+        int sum = 1;
+        num = new_num % 10; // 5
         for (int i = 1; i <= num; i++)
         {
             sum = sum * i;
-            new_sum = new_sum + sum;
         }
-        num = num / 10;
+        new_sum = new_sum + sum;
+        new_num = new_num / 10;
     }
-    printf("%d", new_sum);
+
+    if (new_sum == old_num)
+    {
+        printf("The number is Strong number");
+    }else
+    {
+       printf("The number not is Strong number");
+    }
+    
+    
 
     return 0;
 }
