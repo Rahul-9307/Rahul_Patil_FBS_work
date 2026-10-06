@@ -1,4 +1,4 @@
-// // Print armstrong numbers in the given range 1 to n.
+// Print armstrong numbers in the given range 1 to n.
 
 #include <stdio.h>
 
@@ -7,14 +7,14 @@ int main()
     int n;
     printf("Enter Your no = ");
     scanf("%d", &n);
-    for (int k = 100; k <= 10000; k++)
+    for (int k = 100; k <= n; k++)
     {
-
         int number = k;
         int count = 0;
         int rem;
         int sum = 0;
         int new_number = number;
+
 
         while (number > 0)
         {
