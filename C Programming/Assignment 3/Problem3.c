@@ -14,7 +14,7 @@ int main(){
     {
         sum = sum + start;
     }
-    printf("The sum is %d ",sum);
+    printf("The number star is %d and number end is  %d and The range start to end is %d ",start,end,sum);
     
     return 0;
 }
