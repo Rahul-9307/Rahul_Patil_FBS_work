@@ -20,3 +20,26 @@
 19	memmove()	Move bytes safely when memory areas overlap
 20	memcmp()	Compare bytes in memory
 21	memset()	Fill a memory area with a byte value */
+
+// 1	strlen()	Find string length
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+
+    // strlen()	Find string length
+
+    char arr[] = "Rhaul paitl";
+    int length = strlen(arr);
+
+    printf("The arr length is : %d \n", length);
+
+    //  3	strncpy()	Copy a limited number of characters
+    char copy1[sizeof(arr)-2];
+    char num = strncpy(copy1,arr,sizeof(arr));
+     printf("Copy a limited number of characters  is : %s", copy1);
+
+    return 0;
+}
