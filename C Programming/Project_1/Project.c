@@ -141,7 +141,7 @@ void top_3_books(bookdata *allbooks, int *totalBooks)
         {
             for (int i = 0; i < *totalBooks - 1; i++)
             {
-                for (int j = 0; i < *totalBooks - 1 - i; j++)
+                for (int j = 0; j < *totalBooks - 1 - i; j++)
                 {
                     if (allbooks[j].book_bookrating < allbooks[j + 1].book_bookrating)
                     {
@@ -182,7 +182,6 @@ void sorting_book(bookdata *allbooks, int *totalBooks)
     int found = 0;
     while (1)
     {
-
         printf("\n......................Menu..............................\n");
         printf("Enter 1 : sort by id \n");
         printf("Enter 2: sort by price\n");
@@ -291,7 +290,7 @@ void delete_books(bookdata *deleted, int *totalBooks)
         if (deleted[i].book_id == id)
         {
             found = 1;
-            for (int j = i; i < *totalBooks - 1; j++)
+            for (int j = i; j < *totalBooks - 1; j++)
             {
                 deleted[j] = deleted[j + 1];
             }
@@ -334,24 +333,26 @@ void search_books(bookdata *search, int *totalbooks)
 void add_1_books(bookdata *add, int *totalbooks)
 {
     {
-        for (int i = 0; *totalbooks >= 100; i++)
-        {
-            printf("Book storage is full!\n");
-            return;
-        }
-        int i = *totalbooks + 1; // number
+        if (*totalbooks >= 100)
+    {
+        printf("Book storage is full!\n");
+        return;
+    }
+        int index = *totalbooks; // number
         printf("Enter your book Author Name :  ");
-        scanf("%19s", add[i].book_name);
+        scanf(" %19[^\n]", add[index].book_author_name);
+        printf("Enter your book  Name :  ");
+        scanf(" %19[^\n]", add[index].book_name);
         printf("Enter your book id : ");
-        scanf("%d", &add[i].book_id);
+        scanf("%d", &add[index].book_id);
         printf("Enter you book price :  ");
-        scanf("%f", &add[i].book_price);
+        scanf("%f", &add[index].book_price);
         printf("Enter you book bookrating : ");
-        scanf("%f", &add[i].book_bookrating);
+        scanf("%f", &add[index].book_bookrating);
 
         (*totalbooks)++;
 
-        printf(" One new book added sucessfully!.. Total books is %d !\n", i);
+        printf(" One new book added sucessfully!..\n Total books is %d !\n", index + 1);
     }
 }
 
@@ -364,17 +365,17 @@ void addbooks(bookdata *add, int *totalBooks, int books)
     }
     for (int i = 0; i < books; i++)
     {
-        int i = *totalBooks;
+        int index = *totalBooks;
         printf("Enter your book Author Name :  ");
-        scanf("%19s", add[i].book_author_name);
+        scanf(" %19[^\n]",add[index].book_author_name);
         printf("Enter your book  Name :  ");
-        scanf("%19s", add[i].book_name);
+        scanf(" %19[^\n]",add[index].book_name);
         printf("Enter your book id : ");
-        scanf("%d", &add[i].book_id);
+        scanf("%d",&add[index].book_id);
         printf("Enter you book price :  ");
-        scanf("%f", &add[i].book_price);
+        scanf("%f",&add[index].book_price);
         printf("Enter you book bookrating : ");
-        scanf("%f", &add[i].book_bookrating);
+        scanf("%f",&add[index].book_bookrating);
 
         (*totalBooks)++;
 
@@ -413,22 +414,22 @@ void updatedbooks(bookdata *allbookdata, int *totalBooks)
             printf("Enter you number : ");
             scanf("%d", &choise);
 
-            int price;
-            int ratting;
+            float price;
+            float ratting;
 
             if (choise == 1)
             {
                 printf("Enter your price \n");
-                scanf("%.1f", &price);
+                scanf("%f", &price);
                 allbookdata[i].book_price = price;
                 printf("Your price add sucessfully \n");
             }
             else if (choise == 2)
             {
                 printf("Enter your Ratting \n");
-                scanf("%.1f", &ratting);
+                scanf("%f", &ratting);
                 allbookdata[i].book_bookrating = ratting;
-                printf("Your price add sucessfully \n");
+                printf("Your Ratiing add sucessfully \n");
             }
             else
             {
@@ -436,7 +437,7 @@ void updatedbooks(bookdata *allbookdata, int *totalBooks)
             }
         }
     }
-    if (found = 0)
+    if (found == 0)
     {
         printf("Your book is not found!");
     }
