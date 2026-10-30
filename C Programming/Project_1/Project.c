@@ -30,17 +30,17 @@ int main()
 {
 
     printf("\n");
-printf("============================================\n");
-printf("                                            \n");
-printf("       WELCOME TO BOOK MANAGEMENT           \n");
-printf("                 SYSTEM                     \n");
-printf("                                            \n");
-printf("     Manage Your Books Easily and Quickly   \n");
-printf("                                            \n");
-printf("============================================\n");
-printf("\n");
-printf("       System Started Successfully!\n");
-printf("\n");
+    printf("============================================\n");
+    printf("                                            \n");
+    printf("       WELCOME TO BOOK MANAGEMENT           \n");
+    printf("                 SYSTEM                     \n");
+    printf("                                            \n");
+    printf("     Manage Your Books Easily and Quickly   \n");
+    printf("                                            \n");
+    printf("============================================\n");
+    printf("\n");
+    printf("       System Started Successfully!\n");
+    printf("\n");
 
     bookdata allbookdata[100];
 
@@ -55,20 +55,20 @@ printf("\n");
 
     while (1)
     {
-    printf("  How many books do you want to add? (1-100): ");
-    scanf("%d", &books);
+        printf("  How many books do you want to add? (1-100): ");
+        scanf("%d", &books);
 
-    if (books > 0 && books <= 100)
-    {
-        addbooks(allbookdata, &totalBooks, books);
-        break;
+        if (books > 0 && books <= 100)
+        {
+            addbooks(allbookdata, &totalBooks, books);
+            break;
+        }
+        else
+        {
+            printf("\nInvalid input! Please enter a number between 1 and 100.\n");
+            printf("==================================================\n");
+        }
     }
-    else
-    {
-        printf("\nInvalid input! Please enter a number between 1 and 100.\n");
-         printf("==================================================\n");
-    }
-}
 
     while (1)
     {
@@ -196,18 +196,27 @@ void top_3_books(bookdata *allbooks, int *totalBooks)
         }
         else if (choise == 3)
         {
-           printf("Exit Successfully!..");
+            printf("Exit Successfully!..");
             break;
         }
         else
         {
             printf("\nInvalid choice! Please try again.\n");
         }
-        
-        int limit = (*totalBooks < 3) ? *totalBooks : 3;
+
+        int limit;
+
+        if (*totalBooks < 3)
+        {
+            limit = *totalBooks;
+        }
+        else
+        {
+            limit = 3;
+        }
         for (int i = 0; i < limit; i++)
         {
-             printf("\nBook Number : %d\n", i + 1);
+            printf("\nBook Number : %d\n", i + 1);
             printf("----------------------------------------\n");
             printf("Author Name : %s\n", allbooks[i].book_author_name);
             printf("Book ID     : %d\n", allbooks[i].book_id);
@@ -552,7 +561,6 @@ void updatedbooks(bookdata *allbookdata, int *totalBooks)
                 }
 
                 printf("========================================\n");
-               
             }
         }
     }
