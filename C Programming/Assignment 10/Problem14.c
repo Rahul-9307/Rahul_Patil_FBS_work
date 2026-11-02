@@ -1,45 +1,30 @@
-//  1. Write a user define functions for
-// mystrncmp
+// strcoll()	Compare strings using locale rules
 
 #include <stdio.h>
-int mystrncmp(char *, char *, int);
+#include <string.h>
+#include <locale.h>
 
 int main()
 {
-    char str1[] = "Hello";
-    char str2[] = "Help";
+    setlocale(LC_COLLATE, "");
 
-    int result = mystrncmp(str1, str2, 2);
+    char str1[] = "hgApplehgh";
+    char str2[] = "mBananaghjgjhk";
+
+    int result = strcoll(str1, str2);
 
     if (result == 0)
+    {
         printf("Strings are equal");
+    }
     else if (result < 0)
-        printf("First string is smaller");
+    {
+        printf("Apple comes before Banana");
+    }
     else
-        printf("First string is greater");
+    {
+        printf("Apple comes after Banana");
+    }
 
     return 0;
-}
-
-int mystrncmp(char* str1, char* str2, int no)
-{
-    int i = 0;
-    while (str1[i] == str2[i]  && i <= no)
-    {
-            i++;
-
-        if (str1[i] > str2[i])
-        {
-            return 1;
-        }else if (str1[i] < str2[i])
-        {
-            return -1;
-        }else
-        {
-            return 0;
-            
-        }
-        
-        
-    }
 }

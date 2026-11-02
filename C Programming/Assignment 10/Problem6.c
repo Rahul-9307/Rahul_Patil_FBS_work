@@ -1,29 +1,13 @@
-// 1. Write a user define functions for ::
-// mystrupper
+// strcmp()	Compare two strings
+
 #include <stdio.h>
 #include <string.h>
-void mystrupper(char*);
-int main()
-{
 
-    char arr[] = "rahulpatiltheboss";
+int main(){
+    char arr[] = "rhaul patil";
+    char arr2[]= "Rahul patil";
 
-    mystrupper(arr);
-    printf("The new arrry is %s",arr);
-
+    int cmp = strcmp(arr,arr2);
+    printf("%d",cmp);
     return 0;
-}
-
-void mystrupper(char* arr){
-    int i = 0;
-    while (arr[i]!= '\0')
-    {
-        if (arr[i] >= 'a' && arr[i] <= 'z')
-        {
-            arr[i] = arr[i] - 32;
-        }
-        
-       i++;
-    }
-    
 }

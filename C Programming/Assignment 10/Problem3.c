@@ -1,43 +1,12 @@
-// 1. Write a user define functions for ::
-// c. mystrcmp
-
+//  3	strncpy()	Copy a limited number of characters
 #include <stdio.h>
 #include <string.h>
-int mystrcmp(char *, char *);
-int main()
-{
-    char arr[] = "az";
-    char newarr[] = "ba";
 
-    int result = mystrcmp(arr, newarr);
-
-    printf("%d", result);
-
+int main(){
+    char arr[]= "Rahul patil";
+    char copy[10];
+    strncpy(copy,arr,(sizeof(arr)-5));
+    copy[sizeof(arr)-5]='\0';
+     printf("Copy a limited number of characters  is : %s",copy );
     return 0;
-}
-
-int mystrcmp(char *arr, char *newarr)
-{
-    int i = 0;
-   
-
-    while (arr[i] == newarr[i] && arr[i]!= '\0')
-    {
-        
-        i++;
-    }
-    if (arr[i] > newarr[i])
-        {
-            return 1;
-        }
-        else if (arr[i] < newarr[i])
-        {
-            return -1;
-        }
-        else
-        {
-           return 0;
-        }
-
-  
 }

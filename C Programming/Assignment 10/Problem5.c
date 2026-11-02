@@ -1,19 +1,14 @@
+// strncat()	Join a limited number of characters
+// strncat(destination, source, n)
 
+#include <stdio.h>
+#include <string.h>
 
+int main(){
+    char arr[200] = "rhaul pati ";
+    char arr2[]= "The_boss";
 
- char* mystrcat(char* arr, char* arr2){
-
-
-  int i = 0;
-  int j = strlen(arr);
-
-  while (arr2[i] != '\0')
-  {
-     arr[j + i] = arr2[i];
-      
-    i++;
-  }
-  arr[i + j] = '\0';
-    return arr;
-    
+    strncat(arr,arr2,4);
+    printf("%s",arr);
+    return 0;
 }

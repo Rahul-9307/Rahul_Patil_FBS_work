@@ -1,26 +1,13 @@
-// 1. Write a user define functions for ::
-// mystrlower
-#include <stdio.h>
-char* mystrlower(char* );
-int main(){
-    char arr[] = "RAHULPATILTHEBOSS";
-    mystrlower(arr);
-    printf("The converted string is %s",arr);
-    return 0;
-}
+// strncmp()	Compare a limited number of characters
 
-char* mystrlower(char* arr){
-    int i = 0;
-    while ( arr[i] != '\0')
-    {
-        if (arr[i]>= 'A' && arr[i] <= 'Z')
-        {
-            arr[i] = arr[i] + 32;
-            /* code */
-        }
-        
-        i++;
-    }
-    return arr;
-    
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char arr[] = "rahul patil";
+    char arr2[]= "rahul patil";
+
+    int cmp = strncmp(arr,arr2,5);
+    printf("%d",cmp);
+    return 0;
 }

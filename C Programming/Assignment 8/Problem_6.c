@@ -3,19 +3,30 @@
 void isprime(int *);
 int main()
 {
-    printf("start");
+    printf("start \n");
     int arr[] = {7, 40, 7, 3, 86, 59, 74, 52, 75};
     isprime(arr);
     return 0;
 }
-void isprime(int *arr)
-{
-    for (int i = 2; i < 9; i++)
+void isprime(int *arr){
+    for (int  i = 0; i < 9; i++)
     {
-
-        if (arr[i - 2] % i == 0)
+        int flag = 0;
+        for (int  j = 2; j < arr[i]; j++)
         {
-            printf("%d ", arr[i]);
+            if (arr[i] % j == 0)
+            {
+                flag = 1;
+                break;
+            }
+            
         }
+        if (flag == 0 && arr[i] > 1)
+        {
+          printf("%d ",arr[i]);
+        }
+        
+        
     }
+    
 }
